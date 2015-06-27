@@ -1,1 +1,7 @@
-%h1 Hello
+- @posts.each do |post|
+	%h2= post.title
+	%p
+		Publie il'y a
+		= time_ago_in_words(post.created_at)
+
+= link_to "Nouvelle Article", new_post_path
