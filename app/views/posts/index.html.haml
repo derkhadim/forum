@@ -1,7 +1,11 @@
 - @posts.each do |post|
-	%h2= post.title
+	%h2= link_to post.title, post
 	%p
 		Publie il'y a
 		= time_ago_in_words(post.created_at)
+		Par
+		= post.user.email
 
 = link_to "Nouvelle Article", new_post_path
+
+= link_to "quitter", destroy_user_session_path, method: :delete
